@@ -4,8 +4,12 @@ import { browserHistory } from 'react-router';
 
 import rootReducer from './reducers/index';
 
+import homepage from './data/pages/homepage'
+import heartbeatTests from './data/heartbeatTests/testCases'
+
 const defaultState = {
-  test: "test"
+  homepage,
+  heartbeatTests,
 };
 
 const store = createStore(rootReducer, defaultState);

@@ -1,8 +1,13 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
-import test from './test';
+import homepage from './homepage'
+import heartbeatTests from './heartbeatTests'
 
-const rootReducer = combineReducers({test, routing: routerReducer });
+const rootReducer = combineReducers({
+  homepage,
+  heartbeatTests,
+  routing: routerReducer,
+});
 
 export default rootReducer;
