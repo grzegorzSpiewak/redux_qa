@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 
-import homepage from './homepage'
-import heartbeatTests from './heartbeatTests'
+import dataToCompare from './dataToCompare';
 
 const rootReducer = combineReducers({
-  homepage,
-  heartbeatTests,
+  homepage: (state = {}) => state,
+  heartbeatTests: (state = {}) => state,
+  dataToCompare,
   routing: routerReducer,
 });
 

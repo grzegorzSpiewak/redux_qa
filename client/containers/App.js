@@ -5,9 +5,9 @@ import Layout from './Layout';
 
 function mapStateToProps(state) {
   return {
-    test: state.test,
     homepage: state.homepage,
     heartbeatTests: state.heartbeatTests,
+    dataToCompare: state.dataToCompare
   }
 }
 

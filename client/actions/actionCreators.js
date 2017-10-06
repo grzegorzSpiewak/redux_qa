@@ -1,6 +1,13 @@
-export function increment(index) {
+export function getDataToCompare(value) {
   return {
-    type: 'INCREMENT_LIKES',
-    index
+    type: 'GET_DATA_TO_COMPARE',
+    value
+  }
+}
+
+export function prepareData(value) {
+  return {
+    type: 'PREPARE_DATA_TO_COMPARE',
+    value
   }
 }

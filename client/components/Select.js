@@ -1,10 +1,11 @@
-import React, {Component} from 'react'
+import React, { Component} from 'react'
+import { browserHistory } from 'react-router';
 
 class Select extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      redirect: '/result',
+      redirect: '/heartbeat',
       select: {
         testSuite: '',
       }
@@ -15,7 +16,8 @@ class Select extends React.Component {
 
   routerHandler(data) {
     const query = data.replace(/ /g, "")
-    console.log(query)
+    const redirect = this.state.redirect
+    browserHistory.push({pathname: redirect, query: {name: query}})
   }
 
   onFormSubmit(e) {

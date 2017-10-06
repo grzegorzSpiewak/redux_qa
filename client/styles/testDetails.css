@@ -1,10 +1,10 @@
 .test-details {
   padding: 2rem 0 0 0;
+  width: 100%;
 }
 
 .test-details__wrap {
   background-color: #FFF;
-  width: calc(100% - 2rem);
 	max-width: 1280px;
 	margin: 0 auto;
   border: 2px solid rgba(0,0,0,0.15);
