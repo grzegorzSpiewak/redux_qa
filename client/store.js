@@ -10,8 +10,8 @@ import heartbeatTests from './data/heartbeatTests/testCases'
 const defaultState = {
   homepage,
   heartbeatTests,
-  results: [],
-  dataToCompare: [],
+  results: {},
+  dataToCompare: {},
 };
 
 const store = createStore(rootReducer, defaultState);

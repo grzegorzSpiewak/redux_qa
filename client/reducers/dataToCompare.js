@@ -4,7 +4,7 @@ function dataToCompare(state = [], action) {
       const data = JSON.stringify(action.value)
       const pairs =  data.replace(/(?:\\[rn]|[\r\n]+)+/g, '", "')
       const cleanPairs = pairs.replace(/\\t/g, ' ')
-      const dataCheck = cleanPairs.split(', ').map(elem => elem.replace(/(^"|"$)/g, "")).map(elem => {
+      const varToValidate = cleanPairs.split(', ').map(elem => elem.replace(/(^"|"$)/g, "")).map(elem => {
         const splitPairs = elem.split(' ')
         let name = splitPairs[0]
         let value = splitPairs[1]
@@ -19,9 +19,9 @@ function dataToCompare(state = [], action) {
         return pairsToCheck
       })
 
-      return [...state,
-        dataCheck
-      ]
+      return {...state,
+        varToValidate
+      }
     default:
       return state;
   }

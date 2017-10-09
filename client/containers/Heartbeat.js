@@ -4,12 +4,14 @@ import React from 'react'
 import TestDetails from '../components/TestDetails'
 import Informations from '../components/Informations'
 import Compare from '../components/Compare'
-import Missing from '../components/Missing'
-import Present from '../components/Present'
+import Result from '../components/Result'
 
 export default class Heartbeat extends React.Component {
   constructor (props) {
     super(props);
+    this.state = {
+      testReport: {}
+    }
   }
 
   render () {
@@ -22,14 +24,14 @@ export default class Heartbeat extends React.Component {
         <Informations { ...testData } />
         <Compare { ...testData }/>
         {
-          this.props.results[0] && this.props.results[0].items.length > 0 ?
-            <Missing { ...this.props.results[0] }/>
-            :
-            null
+          this.props.results.missingVar ?
+          <Result {...this.props.results.missingVar} />
+          :
+          null
         }
         {
-          this.props.results[1] && this.props.results[1].items.length > 0?
-          <Present {...this.props.results[1]} />
+          this.props.results.presentVar ?
+          <Result {...this.props.results.presentVar} />
           :
           null
         }

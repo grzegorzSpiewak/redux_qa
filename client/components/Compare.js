@@ -23,7 +23,7 @@ class CompareComponent extends React.Component {
   getResults (e) {
     e.preventDefault()
     const varRequired = this.props.items
-    const varToValidate = this.props.dataToCompare
+    const varToValidate = this.props.dataToCompare.varToValidate
     this.props.compareData(varRequired, varToValidate)
   }
 

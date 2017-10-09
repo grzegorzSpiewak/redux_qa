@@ -1,7 +1,7 @@
 function compareData(state = [], action) {
   switch(action.type) {
     case 'COMPARE_DATA' :
-      const varToValidate = action.varToValidate[0]
+      const varToValidate = action.varToValidate
       const varToValidateNames = varToValidate.map((check) => check.name)
       const varRequired = action.varRequired
       const presentNames = []
@@ -31,11 +31,11 @@ function compareData(state = [], action) {
         })
       })
 
-      return [
+      return {
         ...state,
-        missingVar: missingVar,
-        presentVar: presentVar
-      ]
+        missingVar,
+        presentVar,
+      }
     default:
       return state;
   }
