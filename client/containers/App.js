@@ -7,7 +7,8 @@ function mapStateToProps(state) {
   return {
     homepage: state.homepage,
     heartbeatTests: state.heartbeatTests,
-    dataToCompare: state.dataToCompare
+    dataToCompare: state.dataToCompare,
+    results: state.results
   }
 }
 

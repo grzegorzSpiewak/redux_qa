@@ -13,12 +13,10 @@ const otherVar = {
   items: []
 }
 
-const testResults = {
-  testname: {
-    presentVar,
-    missingVar,
-    otherVar
-  }
+const compareResults = {
+  presentVar,
+  missingVar,
+  otherVar
 }
 
-export default testResults
+export default compareResults

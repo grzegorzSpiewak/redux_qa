@@ -5,9 +5,10 @@ export function getDataToCompare(value) {
   }
 }
 
-export function prepareData(value) {
+export function compareData(varRequired, varToValidate) {
   return {
-    type: 'PREPARE_DATA_TO_COMPARE',
-    value
+    type: 'COMPARE_DATA',
+    varRequired,
+    varToValidate
   }
 }
