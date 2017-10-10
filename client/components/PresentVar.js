@@ -13,52 +13,50 @@ function mapStateToProps(state) {
 class Results extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      testFailed: false,
-    }
+    this.state = {}
   }
 
-  checkVariables(e) {
-    const checkedVar = e.target.name
-    const testType = e.target.value
+  handleValidate(e) {
+    const varName = e.target.name
     const isChecked = e.target.checked
-    isChecked === true && testType === "Pass" ?
-    console.log("przeszla")
+    const inputValue = e.target.value
+    const passed = []
+    const failed = []
+    isChecked === true && inputValue === "Pass" ?
+    passed.push(varName)
     :
+    failed.push(varName)
     this.setState({
-      testFailed: true
+      passed,
+      failed
     })
   }
 
   renderList(items) {
+
     return items.map((item, i) =>
       <li key={i} className="results__list__item">
         {item.name} with value {item.value}
         <label className="results__list__item__check">
           Passed:
           <Checkbox
-            className={`results__list__item__check__input`}
+            className={'results__list__item__check__input'}
             value={"Pass"}
             name={`${item.name}`}
-            onClick={this.checkVariables.bind(this)}
+            onClick={this.handleValidate.bind(this)}
           />
         </label>
         <label className="results__list__item__check">
           Fail:
           <Checkbox
-            className={`results__list__item__check__input`}
+            className={'results__list__item__check__input'}
             value={"Fail"}
             name={`${item.name}`}
-            onClick={this.checkVariables.bind(this)}
+            onClick={this.handleValidate.bind(this)}
           />
         </label>
-        {
-          this.state.testFailed === true ?
-          <textarea className={`results__list__item__check__details`} key={i}/>
-          :
-          null
-        }
-
+        <input type="text" />
+        {console.log(this.state)}
       </li>
     )
   }
