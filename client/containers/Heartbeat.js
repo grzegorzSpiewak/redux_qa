@@ -4,7 +4,8 @@ import React from 'react'
 import TestDetails from '../components/TestDetails'
 import Informations from '../components/Informations'
 import Compare from '../components/Compare'
-import Result from '../components/Result'
+import MissingVar from '../components/MissingVar'
+import PresentVar from '../components/PresentVar'
 
 export default class Heartbeat extends React.Component {
   constructor (props) {
@@ -25,13 +26,13 @@ export default class Heartbeat extends React.Component {
         <Compare { ...testData }/>
         {
           this.props.results.missingVar ?
-          <Result {...this.props.results.missingVar} />
+          <MissingVar {...this.props.results.missingVar} />
           :
           null
         }
         {
           this.props.results.presentVar ?
-          <Result {...this.props.results.presentVar} />
+          <PresentVar />
           :
           null
         }

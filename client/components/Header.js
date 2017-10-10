@@ -5,11 +5,12 @@ import { Link } from 'react-router';
 const renderItems = (items) => {
   return items.map((item, i) =>
     <li className="header__list__item" role="menuitem" key={i}>
-      <Link to={ `${item.href}` }
-            className={ `${item.currentPage === true ?
-            'header__list__item__link active'
-            :
-            'header__list__item__link' }`}
+      <Link
+        to={ `${item.href}` }
+        className={ `${item.currentPage === true ?
+        'header__list__item__link active'
+        :
+        'header__list__item__link' }`}
       >
       {
         item.anchor
