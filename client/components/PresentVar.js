@@ -6,7 +6,7 @@ import Checkbox from './Checkbox'
 
 function mapStateToProps(state) {
   return {
-    results: state.results
+    results: state.resultValidation
   }
 }
 
@@ -16,20 +16,11 @@ class Results extends React.Component {
     this.state = {}
   }
 
-  handleValidate(e) {
-    const varName = e.target.name
-    const isChecked = e.target.checked
-    const inputValue = e.target.value
-    const passed = []
-    const failed = []
-    isChecked === true && inputValue === "Pass" ?
-    passed.push(varName)
-    :
-    failed.push(varName)
-    this.setState({
-      passed,
-      failed
-    })
+  handlePassed(e) {
+    const name = e.target.name
+    const id = e.target.id
+    const result = e.target.value
+    this.props.resultPassed(name, result, id)
   }
 
   renderList(items) {
@@ -42,8 +33,9 @@ class Results extends React.Component {
           <Checkbox
             className={'results__list__item__check__input'}
             value={"Pass"}
+            id={i}
             name={`${item.name}`}
-            onClick={this.handleValidate.bind(this)}
+            onClick={this.handlePassed.bind(this)}
           />
         </label>
         <label className="results__list__item__check">
@@ -51,12 +43,12 @@ class Results extends React.Component {
           <Checkbox
             className={'results__list__item__check__input'}
             value={"Fail"}
+            id={i}
             name={`${item.name}`}
-            onClick={this.handleValidate.bind(this)}
+            onClick={this.props.resultFailed}
           />
         </label>
         <input type="text" />
-        {console.log(this.state)}
       </li>
     )
   }
@@ -65,9 +57,9 @@ class Results extends React.Component {
     return (
       <section className="results">
         <div className="results__wrap">
-          <h1 className="results__header">{this.props.results.presentVar.header}</h1>
+          <h1 className="results__header">{this.props.header}</h1>
           <ul className="results__list">
-            {this.renderList(this.props.results.presentVar.items)}
+            {this.renderList(this.props.items)}
           </ul>
         </div>
       </section>

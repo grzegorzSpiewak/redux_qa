@@ -12,3 +12,22 @@ export function compareData(varRequired, varToValidate) {
     varToValidate
   }
 }
+
+export function resultPassed(name, result, id) {
+  return {
+    type: 'RESULT_PASSED',
+    name,
+    result,
+    id,
+  }
+
+}
+
+export function resultFailed(name, result, value, id) {
+  return {
+    type: 'RESULT_FAILED',
+    name,
+    value,
+    id
+  }
+}

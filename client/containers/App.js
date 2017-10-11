@@ -8,7 +8,8 @@ function mapStateToProps(state) {
     homepage: state.homepage,
     heartbeatTests: state.heartbeatTests,
     dataToCompare: state.dataToCompare,
-    results: state.results
+    results: state.results,
+    resultValidation: state.resultValidation
   }
 }
 

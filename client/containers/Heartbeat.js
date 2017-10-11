@@ -32,10 +32,11 @@ export default class Heartbeat extends React.Component {
         }
         {
           this.props.results.presentVar ?
-          <PresentVar />
+          <PresentVar {...this.props.results.presentVar} />
           :
           null
         }
+        {console.log(this.props)}
       </div>
     )
   }
