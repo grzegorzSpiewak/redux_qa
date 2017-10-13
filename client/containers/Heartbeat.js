@@ -10,9 +10,6 @@ import PresentVar from '../components/PresentVar'
 export default class Heartbeat extends React.Component {
   constructor (props) {
     super(props);
-    this.state = {
-      testReport: {}
-    }
   }
 
   render () {

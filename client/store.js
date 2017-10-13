@@ -12,11 +12,8 @@ const defaultState = {
   heartbeatTests,
   results: {},
   dataToCompare: {},
-  resultValidation: {
-    name: null,
-    result: null,
-    id: null,
-  }
+  passed: {},
+  failed: {}
 };
 
 const store = createStore(rootReducer, defaultState);

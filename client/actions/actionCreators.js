@@ -13,21 +13,28 @@ export function compareData(varRequired, varToValidate) {
   }
 }
 
-export function resultPassed(name, result, id) {
+export function passedChecked(isChecked, id, name) {
   return {
-    type: 'RESULT_PASSED',
-    name,
-    result,
+    type: 'PASSED_CHECKBOX_CLIKED',
+    isChecked,
     id,
+    name,
   }
-
 }
 
-export function resultFailed(name, result, value, id) {
+export function failedChecked(isChecked, id, name, value) {
   return {
-    type: 'RESULT_FAILED',
+    type: 'FAILED_CHECKBOX_CLIKED',
+    isChecked,
+    id,
     name,
-    value,
-    id
+  }
+}
+
+export function failedReason(id, value) {
+  return {
+    type: 'UPDATE_REASON',
+    id,
+    value
   }
 }

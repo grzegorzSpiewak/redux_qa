@@ -3,24 +3,38 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actionCreators from '../actions/actionCreators';
 import Checkbox from './Checkbox'
+import Text from './Text'
 
 function mapStateToProps(state) {
   return {
-    results: state.resultValidation
+    passed: state.passed,
+    failed: state.failed,
   }
 }
 
 class Results extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {}
   }
 
-  handlePassed(e) {
+  handleCheckbox(e) {
     const name = e.target.name
     const id = e.target.id
-    const result = e.target.value
-    this.props.resultPassed(name, result, id)
+    const isChecked = e.target.checked
+    const checkType = e.target.value
+
+    checkType === "Passed" ?
+      this.props.passedChecked(isChecked, id, name)
+      :
+      this.props.failedChecked(isChecked, id, name, null)
+  }
+
+  handleText(e) {
+    const reason = e.target.value
+    const id = e.target.id
+    const key = e.key
+
+    key === 'Enter' ? this.props.failedReason(id, reason) : null
   }
 
   renderList(items) {
@@ -28,27 +42,37 @@ class Results extends React.Component {
     return items.map((item, i) =>
       <li key={i} className="results__list__item">
         {item.name} with value {item.value}
-        <label className="results__list__item__check">
-          Passed:
+        {
+          !this.props.failed[i]?
           <Checkbox
-            className={'results__list__item__check__input'}
-            value={"Pass"}
-            id={i}
+            caption={'Passed'}
             name={`${item.name}`}
-            onClick={this.handlePassed.bind(this)}
+            id={i}
+            onClick={this.handleCheckbox.bind(this)}
           />
-        </label>
-        <label className="results__list__item__check">
-          Fail:
+          :
+          null
+        }
+        {
+          !this.props.passed[i] ?
           <Checkbox
-            className={'results__list__item__check__input'}
-            value={"Fail"}
-            id={i}
+            caption={'Failed'}
             name={`${item.name}`}
-            onClick={this.props.resultFailed}
+            id={i}
+            onClick={this.handleCheckbox.bind(this)}
           />
-        </label>
-        <input type="text" />
+          :
+          null
+        }
+        {
+          this.props.failed[i] ?
+          <Text
+            id={i}
+            onKeyUp={this.handleText.bind(this)}
+          />
+          :
+          null
+        }
       </li>
     )
   }

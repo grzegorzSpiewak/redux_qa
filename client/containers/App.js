@@ -9,7 +9,8 @@ function mapStateToProps(state) {
     heartbeatTests: state.heartbeatTests,
     dataToCompare: state.dataToCompare,
     results: state.results,
-    resultValidation: state.resultValidation
+    passed: state.passed,
+    failed: state.failed,
   }
 }
 

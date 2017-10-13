@@ -10,10 +10,6 @@
     "start": "node devServer.js",
     "tunnel": "browser-sync start --proxy localhost:3000 --tunnel"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wesbos/Learn-Redux.git"
-  },
   "author": "Wes Bos",
   "license": "MIT",
   "homepage": "https://github.com/wesbos/Learn-Redux",

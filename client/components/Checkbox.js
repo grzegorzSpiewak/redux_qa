@@ -2,14 +2,17 @@
 import React from 'react'
 
 const Checkbox = (props) => (
-  <input
-    className={`${props.className}`}
-    type="checkbox"
-    id={`${props.id}`}
-    value={`${props.value}`}
-    name={`${props.name}`}
-    onClick={props.onClick}
-  />
+  <label className="results__list__item__check">
+  {props.caption}
+    <input
+      className='results__list__item__check__input'
+      type="checkbox"
+      id={props.id}
+      name={props.name}
+      value={props.caption}
+      onClick={props.onClick}
+    />
+  </label>
 )
 
 export default Checkbox
