@@ -6,6 +6,7 @@ import Informations from '../components/Informations'
 import Compare from '../components/Compare'
 import MissingVar from '../components/MissingVar'
 import PresentVar from '../components/PresentVar'
+import CallSummary from '../components/CallSummary'
 
 export default class Heartbeat extends React.Component {
   constructor (props) {
@@ -33,7 +34,8 @@ export default class Heartbeat extends React.Component {
           :
           null
         }
-        {console.log(this.props)}
+        {console.log(testName)}
+        <CallSummary testName = {testName}/>
       </div>
     )
   }

@@ -6,6 +6,7 @@ function passedChecked(state = [], action) {
           ...state,
           [action.id]: {
             name: action.name,
+            id: action.id
           }
         }
       } else {

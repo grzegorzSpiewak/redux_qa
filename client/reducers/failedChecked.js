@@ -2,7 +2,7 @@ function failedChecked(state = [], action) {
   switch(action.type) {
     case 'FAILED_CHECKBOX_CLIKED' :
       if(action.isChecked === true) {
-        return {...state, [action.id]: {name: action.name}}
+        return {...state, [action.id]: {name: action.name, id: action.id}}
       } else {
         delete state[action.id]
         return { ...state}
@@ -12,7 +12,8 @@ function failedChecked(state = [], action) {
        const name = state[action.id].name
        return {...state, [action.id]: {
          name: name,
-         value: action.value
+         value: action.value,
+         id: action.id
        }}
   return state
     default:
