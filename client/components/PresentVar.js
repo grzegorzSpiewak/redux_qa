@@ -79,14 +79,13 @@ class Results extends React.Component {
 
   render() {
     return (
-      <section className="results">
-        <div className="results__wrap">
-          <h1 className="results__header">{this.props.header}</h1>
-          <ul className="results__list">
-            {this.renderList(this.props.items)}
-          </ul>
-        </div>
-      </section>
+      <div className="results__wrap">
+        <h1 className="results__header">{this.props.header}</h1>
+        <h2 className="results__caption">Validate value returned in call</h2>
+        <ul className="results__list">
+          {this.renderList(this.props.items)}
+        </ul>
+      </div>  
     );
   }
 }

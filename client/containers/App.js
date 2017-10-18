@@ -11,6 +11,7 @@ function mapStateToProps(state) {
     results: state.results,
     passed: state.passed,
     failed: state.failed,
+    saved: state.saved
   }
 }
 

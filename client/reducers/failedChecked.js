@@ -15,7 +15,7 @@ function failedChecked(state = [], action) {
          value: action.value,
          id: action.id
        }}
-  return state
+      return state
     default:
       return state;
   }

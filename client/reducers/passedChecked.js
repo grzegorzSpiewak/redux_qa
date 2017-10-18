@@ -13,10 +13,9 @@ function passedChecked(state = [], action) {
         delete state[action.id]
         return { ...state}
       }
-    return state
-
+      return state
     default:
-      return state;
+      return state
   }
 }
 

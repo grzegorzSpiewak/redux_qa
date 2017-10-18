@@ -16,6 +16,7 @@ class CompareComponent extends React.Component {
   }
 
   updateDataToCompare (e) {
+    e.preventDefault()
     const newValue = e.target.value
     this.props.getDataToCompare(newValue)
   }
@@ -24,12 +25,12 @@ class CompareComponent extends React.Component {
     e.preventDefault()
     const varRequired = this.props.items
     const varToValidate = this.props.dataToCompare.varToValidate
-    this.props.compareData(varRequired, varToValidate)
+    varToValidate === undefined ? console.log("paste variables") : this.props.compareData(varRequired, varToValidate)
   }
 
   render() {
     return (
-      <section className="compare">
+      <div className="compare__wrap">
         <h1 className="compare__header">Copy and paste variables from saved logs</h1>
         <form className="compare__form" id="compare">
           <textarea
@@ -44,7 +45,7 @@ class CompareComponent extends React.Component {
             onClick={this.getResults.bind(this)}
           />
         </form>
-      </section>
+      </div>
     );
   }
 }

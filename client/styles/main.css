@@ -1,1 +1,28 @@
 @import "normalize.css";
+
+body{
+  min-height: 100vh;
+}
+
+.show-appear {
+  opacity: 0.01;
+}
+
+.show-appear.show-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+
+.hide-appear {
+  opacity: 1;
+}
+
+.hide-appear.hide-appear-active {
+  opacity: 0;
+  transition: opacity .5s ease-in;
+}
+
+.compare {
+  opacity: 1;
+}

@@ -1,5 +1,6 @@
 'use strict'
 import React from 'react'
+import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup'
 
 import TestDetails from '../components/TestDetails'
 import Informations from '../components/Informations'
@@ -7,6 +8,8 @@ import Compare from '../components/Compare'
 import MissingVar from '../components/MissingVar'
 import PresentVar from '../components/PresentVar'
 import CallSummary from '../components/CallSummary'
+import Select from '../components/Select'
+import Animated from '../components/Animated'
 
 export default class Heartbeat extends React.Component {
   constructor (props) {
@@ -18,23 +21,31 @@ export default class Heartbeat extends React.Component {
     const testData = this.props.heartbeatTests[testName]
 
     return (
-      <div>
+      <div className="page">
         <TestDetails { ...testData } />
         <Informations { ...testData } />
-        <Compare { ...testData }/>
         {
           this.props.results.missingVar ?
-          <MissingVar {...this.props.results.missingVar} />
+          null
+          :
+          <Compare { ...testData }/>
+        }
+        {
+          this.props.results.missingVar ?
+          <Animated name={'show'} className={'results'}>
+            <MissingVar {...this.props.results.missingVar} />
+          </Animated>
           :
           null
         }
         {
           this.props.results.presentVar ?
-          <PresentVar {...this.props.results.presentVar} />
+          <Animated name={'show'} className={'results'}>
+            <PresentVar {...this.props.results.presentVar} />
+          </Animated>
           :
           null
         }
-        {console.log(testName)}
         <CallSummary testName = {testName}/>
       </div>
     )

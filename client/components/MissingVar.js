@@ -8,21 +8,21 @@ const renderList = (items) => {
 }
 
 const MissingVar = (props) => (
-  <section className="results">
+  <div className="results__wrap">
       {
         props.items.length > 0 ?
-        <div className="results__wrap">
+        <div className="results__missing">
           <h1 className="results__header">{props.header}</h1>
           <ul className="results__list">
             {renderList(props.items)}
           </ul>
         </div>
         :
-        <div className="results__wrap">
+        <div className="results__missing">
           <h1 className="results__header">All required variables are present in this call</h1>
         </div>
       }
-  </section>
+  </div>
 )
 
 export default MissingVar

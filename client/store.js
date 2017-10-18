@@ -13,7 +13,8 @@ const defaultState = {
   results: {},
   dataToCompare: {},
   passed: {},
-  failed: {}
+  failed: {},
+  saved: {}
 };
 
 const store = createStore(rootReducer, defaultState);

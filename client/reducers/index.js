@@ -5,15 +5,26 @@ import dataToCompare from './dataToCompare';
 import results from './compareData';
 import passedChecked from './passedChecked'
 import failedChecked from './failedChecked'
+import storeResults from './storeResults'
 
-const rootReducer = combineReducers({
+const appReducer = combineReducers({
   homepage: (state = {}) => state,
   heartbeatTests: (state = {}) => state,
   passed: passedChecked,
   failed: failedChecked,
+  saved: storeResults,
   results,
   dataToCompare,
   routing: routerReducer,
 });
+
+const rootReducer = (state, action) => {
+  if (action.type === 'LOAD_TEST_PAGE') {
+    state.results = {},
+    state.passed = {},
+    state.failed = {}
+  }
+  return appReducer(state, action)
+}
 
 export default rootReducer;

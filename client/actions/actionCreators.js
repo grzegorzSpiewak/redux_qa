@@ -38,3 +38,20 @@ export function failedReason(id, value) {
     value
   }
 }
+
+export function storeResults(name, missingVar, passed, failed) {
+  return {
+    type: 'SAVE_TEST_RESULTS',
+    name,
+    missingVar,
+    passed,
+    failed
+  }
+}
+
+export function loadTest(state) {
+  return {
+    type: 'LOAD_TEST_PAGE',
+    state
+  }
+}

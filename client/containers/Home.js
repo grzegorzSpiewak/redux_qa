@@ -9,7 +9,7 @@ export default class Main extends React.Component {
 
   render () {
     return (
-      <div className="container__wrap">
+      <div className="page">
         <Informations {...this.props.homepage.informations} />
         <Select {...this.props.homepage.select} />
       </div>
