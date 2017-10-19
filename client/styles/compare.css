@@ -1,0 +1,14 @@
+.compare__form {
+  text-align: center;
+}
+
+.compare__form__textarea {
+  width: 99.5%;
+  min-height: 15em;
+  margin: auto;
+  color: black;
+}
+
+.compare__form__button {
+  margin: auto;
+}

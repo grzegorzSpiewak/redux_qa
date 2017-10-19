@@ -8,7 +8,7 @@ const renderList = (items) => {
 }
 
 const MissingVar = (props) => (
-  <div className="results__wrap">
+  <div className="wrap">
       {
         props.items.length > 0 ?
         <div className="results__missing">

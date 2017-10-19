@@ -30,14 +30,21 @@ class Summary extends React.Component {
 
     testSuites.map(test => test.value === currentTestName ? currentData = test : null)
     this.currentData = currentData
-    return currentData.next
+
+    const nextCapttion = currentData.next === null ? 'All tests are done :)': 'Next test is ' + currentData.next
+    return nextCapttion
+  }
+
+  goSummary() {
+    const forReport = this.state.forReport
+    browserHistory.push({pathname: forReport})
   }
 
   newTest() {
-    const redirect = this.state.forTesting
+    const forTesing = this.state.forTesting
     const nextTest = this.currentData.next
     const query = nextTest.replace(/ /g, "")
-    browserHistory.push({pathname: redirect, query: {name: query}})
+    browserHistory.push({pathname: forTesing, query: {name: query}})
   }
 
   saveSummary(e) {
@@ -45,9 +52,9 @@ class Summary extends React.Component {
     const name = this.props.testName
     const passed = this.props.passed
     const failed = this.props.failed
-    const saveMissing = this.props.results.missingVar ? this.props.results.missingVar : "There are no missing variables"
-    const savePassed = Object.keys(passed).length > 0 ? passed : "All variables present in call return incorect data"
-    const saveFailed = Object.keys(failed).length > 0 ? failed : "All variables present in call return wrong data"
+    const saveMissing = this.props.results.missingVar ? this.props.results.missingVar : null
+    const savePassed = Object.keys(passed).length > 0 ? passed : null
+    const saveFailed = Object.keys(failed).length > 0 ? failed : null
 
     this.props.storeResults(name, saveMissing, savePassed, saveFailed)
     this.props.loadTest()
@@ -57,15 +64,18 @@ class Summary extends React.Component {
   render() {
     return (
       <section className="summary">
-        <div className="summary__wrap">
-          <h1 className="summary__header" onClick={this.nextTest.bind(this)}>Save test results</h1>
-          <p className="summary__caption">Next test is {this.nextTest()}</p>
+        <div className="wrap summary">
+          <h1 className="summary__header" onClick={this.nextTest.bind(this)}>Finish testing and go for next test</h1>
+          <p className="summary__caption">{this.nextTest()}</p>
           {
-            this.currentData.next === null ? null : <button type="button" onClick={this.saveSummary.bind(this)}>Go</button>
+            this.currentData.next === null ? null : <button type="button" className="btn summary__caption__btn" onClick={this.saveSummary.bind(this)}>Go</button>
           }
           {
             Object.keys(this.props.saved).length > 0 ?
-            <button type="button">Create Report</button>
+            <div>
+              <p className="summary__caption">Done testig? Click</p>
+              <button type="button" className="btn" onClick={this.goSummary.bind(this)}>Create Report</button>
+            </div>
             :
             null
           }

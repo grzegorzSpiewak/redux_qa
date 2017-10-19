@@ -10,7 +10,7 @@ function compareData(state = [], action) {
         items: []
       }
       const presentVar = {
-        header: "The variables present in this call:",
+        header: "Validate variables present in this call:",
         items: []
       }
 

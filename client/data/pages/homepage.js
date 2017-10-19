@@ -1,12 +1,12 @@
 const homepage = {
   header: {
-    name: "Test<b><span class='orange__text'>RAIL<span></b>assistant 1.0",
+    name: "Test Rail assistant 1.1",
     links: [
-      {href: "/", anchor: "Home", title: "Home", currentPage: true},
+      {href: "/", name: "Home", icon: "<i class='fa fa-home' aria-hidden='true'></i>", currentPage: true},
     ]
   },
   informations: {
-    header: "How to use test rail assistant?",
+    header: "How to use Test Rail Assistant?",
     items: [
       {name: "1. Open Charles and save logs from testing"},
       {name: "2. Crate Test rail"},

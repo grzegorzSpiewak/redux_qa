@@ -11,11 +11,8 @@ const renderItems = (items) => {
         'header__list__item__link active'
         :
         'header__list__item__link' }`}
-      >
-      {
-        item.anchor
-      }
-      </Link>
+        dangerouslySetInnerHTML={ {__html: item.icon} }
+      />
     </li>
   )
 }

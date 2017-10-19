@@ -1,0 +1,26 @@
+.results__list__item {
+  border-bottom: 1px solid #ffffff;
+  padding: 0.3em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.results__list__item:hover {
+  background-color: #0073AD;
+  cursor: pointer;
+}
+
+.results__list__item__check{
+  padding: 0.3em;
+}
+
+.results__list__item__check__input {
+  margin-left: 0.5em;
+}
+
+.results__list__item__check__textarea {
+  width: 98.5%;
+  color: black;
+  padding: 0.3em;
+  outline: none;
+}

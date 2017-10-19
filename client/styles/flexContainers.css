@@ -1,0 +1,17 @@
+.flex-container {
+  display: inline;
+}
+
+.test-container {
+  flex: 2;
+}
+
+@media(min-width: 980px) {
+  .flex-container {
+    display: flex;
+  }
+
+  .test-container {
+    margin-left: 2rem;
+  }
+}

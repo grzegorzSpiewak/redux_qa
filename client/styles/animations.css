@@ -1,0 +1,37 @@
+.show-appear {
+  opacity: 0.01;
+}
+
+.show-appear.show-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.hide-appear {
+  opacity: 1;
+}
+
+.hide-appear.hide-appear-active {
+  opacity: 0;
+  transition: opacity .5s ease-in;
+}
+
+.compare {
+  opacity: 1;
+}
+
+/********************************
+ ==      Popout animation     ==
+********************************/
+
+@keyframes popout {
+    from{transform:scale(0)}
+    80%{transform:scale(1.2)}
+    to{transform:scale(1)}
+}
+
+@-webkit-keyframes popout {
+    from{-webkit-transform:scale(0)}
+    80%{-webkit-transform:scale(1.2)}
+    to{-webkit-transform:scale(1)}
+}

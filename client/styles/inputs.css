@@ -1,0 +1,44 @@
+/******************************
+         == Buttons ==
+******************************/
+.btn {
+  outline: none;
+  padding: 0.25rem 2.5rem;
+  text-transform: uppercase;
+  background: -webkit-linear-gradient(315deg, #F89406 0%, #F9690E 100%);
+  border: 1px solid transparent;
+  font-weight: 300;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background: #ffffff;
+  border-color: #009ac9;
+  color: #F9690E;
+}
+
+/******************************
+         == Select ==
+******************************/
+select {
+  cursor: pointer;
+  padding: 0.32em;
+  outline: 0;
+  border: 1px solid #009ac9;
+  border-radius: 0;
+  background: #e6e6e6;
+  color: #7b7b7b;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select:focus {
+    outline: none; /* removing default browsers outline on focus */
+}

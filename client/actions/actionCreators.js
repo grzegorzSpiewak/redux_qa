@@ -55,3 +55,10 @@ export function loadTest(state) {
     state
   }
 }
+
+export function startNewTests(state) {
+  return {
+    type: 'START_NEW_TESTS',
+    state
+  }
+}

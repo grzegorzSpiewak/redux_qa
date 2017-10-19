@@ -8,14 +8,14 @@ const renderItems = (items) => {
 }
 
 const Informations = (props) => (
-  <section className="informations">
-    <div className="informations__guide">
+  <aside className="informations">
+    <div className="wrap">
       <h1 className="informations__guide__header" dangerouslySetInnerHTML={ {__html: props.header} } />
       <ul className="informations__guide__list">
         {renderItems(props.items)}
       </ul>
     </div>
-  </section>
+  </aside>
 )
 
 export default Informations

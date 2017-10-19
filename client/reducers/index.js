@@ -24,6 +24,12 @@ const rootReducer = (state, action) => {
     state.passed = {},
     state.failed = {}
   }
+  else if (action.type === 'START_NEW_TESTS') {
+    state.results = {},
+    state.passed = {},
+    state.failed = {},
+    state.saved = {}
+  }
   return appReducer(state, action)
 }
 

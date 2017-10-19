@@ -17,6 +17,7 @@ class Select extends React.Component {
   routerHandler(data) {
     const query = data.replace(/ /g, "")
     const redirect = this.state.redirect
+    this.props.startNewTests()
     browserHistory.push({pathname: redirect, query: {name: query}})
   }
 
@@ -42,15 +43,15 @@ class Select extends React.Component {
 
   render() {
     return (
-      <section className="select">
+      <section className="wrap">
         <form className="select__form" id="select" onSubmit={ this.onFormSubmit.bind(this) }>
           <h1 className="select__form__header">Select test case</h1>
           <div className="select__form__inputs">
             <select name="test-suite" className="select__form__test" onChange={ this.handleSuite }>
               <option value="" defaultValue>HeartBeat tests</option>
-              {this.renderOptions(this.props.suites)}
+              {this.renderOptions(this.props.homepage.select.suites)}
             </select>
-            <input type="submit" value="Go" name="submit_form" className="button select__form__submit"/>
+            <input type="submit" value="Go" name="submit_form" className="btn select__form__submit"/>
           </div>
         </form>
       </section>

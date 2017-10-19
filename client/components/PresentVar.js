@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import * as actionCreators from '../actions/actionCreators';
 import Checkbox from './Checkbox'
 import Text from './Text'
+import Animated from './Animated'
 
 function mapStateToProps(state) {
   return {
@@ -40,8 +41,12 @@ class Results extends React.Component {
   renderList(items) {
 
     return items.map((item, i) =>
-      <li key={i} className="results__list__item">
-        {item.name} with value {item.value}
+      <ul className="results__list" key={i}>
+      <li className="results__list__item">
+        <div className="results__list__item__returns">
+          <b>{item.name}</b> returns <span className="orange">{item.value}</span>
+        </div>
+        <div className="results__list__item__inputs">
         {
           !this.props.failed[i]?
           <Checkbox
@@ -64,28 +69,30 @@ class Results extends React.Component {
           :
           null
         }
-        {
-          this.props.failed[i] ?
+        </div>
+      </li>
+      {
+        this.props.failed[i] ?
+        <Animated name={'show'} className={'results'}>
           <Text
             id={i}
             onKeyUp={this.handleText.bind(this)}
+            text={`${item.name}`}
           />
-          :
-          null
-        }
-      </li>
+        </Animated>
+        :
+        null
+      }
+      </ul>
     )
   }
 
   render() {
     return (
-      <div className="results__wrap">
+      <div className="wrap">
         <h1 className="results__header">{this.props.header}</h1>
-        <h2 className="results__caption">Validate value returned in call</h2>
-        <ul className="results__list">
-          {this.renderList(this.props.items)}
-        </ul>
-      </div>  
+        {this.renderList(this.props.items)}
+      </div>
     );
   }
 }

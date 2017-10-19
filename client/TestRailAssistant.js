@@ -12,6 +12,7 @@ import App from './containers/App'
  */
 import Heartbeat from './containers/Heartbeat'
 import Home from './containers/Home'
+import Summary from './containers/Summary'
 
 import store, { history } from './store'
 
@@ -23,6 +24,9 @@ const router = (
       </Route>
       <Route path="/heartbeat" component={App}>
         <IndexRoute component={Heartbeat}></IndexRoute>
+      </Route>
+      <Route path="/summary" component={App}>
+        <IndexRoute component={Summary}></IndexRoute>
       </Route>
     </Router>
   </Provider>

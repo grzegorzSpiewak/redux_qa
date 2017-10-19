@@ -23,29 +23,33 @@ export default class Heartbeat extends React.Component {
     return (
       <div className="page">
         <TestDetails { ...testData } />
-        <Informations { ...testData } />
-        {
-          this.props.results.missingVar ?
-          null
-          :
-          <Compare { ...testData }/>
-        }
-        {
-          this.props.results.missingVar ?
-          <Animated name={'show'} className={'results'}>
-            <MissingVar {...this.props.results.missingVar} />
-          </Animated>
-          :
-          null
-        }
-        {
-          this.props.results.presentVar ?
-          <Animated name={'show'} className={'results'}>
-            <PresentVar {...this.props.results.presentVar} />
-          </Animated>
-          :
-          null
-        }
+          <div className="flex-container">
+          <Informations { ...testData } />
+            <div className="test-container">
+            {
+              this.props.results.missingVar ?
+              null
+              :
+              <Compare { ...testData }/>
+            }
+            {
+              this.props.results.missingVar ?
+              <Animated name={'show'} className={'results'}>
+                <MissingVar {...this.props.results.missingVar} />
+              </Animated>
+              :
+              null
+            }
+            {
+              this.props.results.presentVar ?
+              <Animated name={'show'} className={'results'}>
+                <PresentVar {...this.props.results.presentVar} />
+              </Animated>
+              :
+              null
+            }
+            </div>
+          </div>
         <CallSummary testName = {testName}/>
       </div>
     )

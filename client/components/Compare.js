@@ -30,20 +30,20 @@ class CompareComponent extends React.Component {
 
   render() {
     return (
-      <div className="compare__wrap">
+      <div className="wrap">
         <h1 className="compare__header">Copy and paste variables from saved logs</h1>
         <form className="compare__form" id="compare">
           <textarea
+            type="Text"
             className="compare__form__textarea"
             onChange={this.updateDataToCompare.bind(this)}
           />
-          <input
+          <button
             type="button"
-            value="Compare"
             name="compare_results"
-            className="compare__form__button"
+            className="btn compare__form__button"
             onClick={this.getResults.bind(this)}
-          />
+          >Compare</button>
         </form>
       </div>
     );
