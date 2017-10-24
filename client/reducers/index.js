@@ -1,8 +1,8 @@
-import { combineReducers } from 'redux';
-import { routerReducer } from 'react-router-redux';
+import { combineReducers } from 'redux'
+import { routerReducer } from 'react-router-redux'
 
-import dataToCompare from './dataToCompare';
-import results from './compareData';
+import dataToCompare from './dataToCompare'
+import results from './compareData'
 import passedChecked from './passedChecked'
 import failedChecked from './failedChecked'
 import storeResults from './storeResults'
@@ -16,7 +16,7 @@ const appReducer = combineReducers({
   results,
   dataToCompare,
   routing: routerReducer,
-});
+})
 
 const rootReducer = (state, action) => {
   if (action.type === 'LOAD_TEST_PAGE') {
@@ -33,4 +33,4 @@ const rootReducer = (state, action) => {
   return appReducer(state, action)
 }
 
-export default rootReducer;
+export default rootReducer

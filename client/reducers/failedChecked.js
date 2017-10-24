@@ -17,9 +17,9 @@ function failedChecked(state = [], action) {
        }}
       return state
     default:
-      return state;
+      return state
   }
 }
 
 
-export default failedChecked;
+export default failedChecked

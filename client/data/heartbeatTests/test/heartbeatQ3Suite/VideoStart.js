@@ -40,6 +40,11 @@ const VideoStart = {
     {name: "s:meta:user.dcg_profile_id"},
     {name: "s:meta:video.closedcaptionoptions"},
     {name: "s:meta:video.source"},
+    {name: "s:meta:video.crossDevicePlay"},
+    {name: "s:meta:video.castSource"},
+    {name: "s:meta:video.authorizing_network"},
+    {name: "s:meta:page.buildVersion"},
+    {name: "s:meta:user.network_entitlement_list"}
   ],
   testName: "Heartbeat Q3 Video Start",
   testDetails: "Search for call with s:event:type <b>start</b> and s:asset:type <b>main</b>",

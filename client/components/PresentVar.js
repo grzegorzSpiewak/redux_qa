@@ -1,7 +1,7 @@
 import React, { Component} from 'react'
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as actionCreators from '../actions/actionCreators';
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as actionCreators from '../actions/actionCreators'
 import Checkbox from './Checkbox'
 import Text from './Text'
 import Animated from './Animated'
@@ -15,7 +15,7 @@ function mapStateToProps(state) {
 
 class Results extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   handleCheckbox(e) {
@@ -73,7 +73,7 @@ class Results extends React.Component {
       </li>
       {
         this.props.failed[i] ?
-        <Animated name={'show'} className={'results'}>
+        <Animated transitionName={'show'} className={'results__list__item__check__textarea'} component={'div'}>
           <Text
             id={i}
             onKeyUp={this.handleText.bind(this)}
@@ -93,14 +93,14 @@ class Results extends React.Component {
         <h1 className="results__header">{this.props.header}</h1>
         {this.renderList(this.props.items)}
       </div>
-    );
+    )
   }
 }
 
 function mapDispachToProps(dispatch) {
-  return bindActionCreators(actionCreators, dispatch);
+  return bindActionCreators(actionCreators, dispatch)
 }
 
-const PresentVar = connect(mapStateToProps, mapDispachToProps)(Results);
+const PresentVar = connect(mapStateToProps, mapDispachToProps)(Results)
 
-export default PresentVar;
+export default PresentVar

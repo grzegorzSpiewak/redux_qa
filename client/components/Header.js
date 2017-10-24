@@ -1,6 +1,6 @@
 'use strict'
 import React from 'react'
-import { Link } from 'react-router';
+import { Link } from 'react-router'
 
 const renderItems = (items) => {
   return items.map((item, i) =>

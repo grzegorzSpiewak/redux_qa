@@ -23,8 +23,8 @@ function dataToCompare(state = [], action) {
         varToValidate
       }
     default:
-      return state;
+      return state
   }
 }
 
-export default dataToCompare;
+export default dataToCompare

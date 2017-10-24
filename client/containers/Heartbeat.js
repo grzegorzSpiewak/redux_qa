@@ -13,7 +13,7 @@ import Animated from '../components/Animated'
 
 export default class Heartbeat extends React.Component {
   constructor (props) {
-    super(props);
+    super(props)
   }
 
   render () {
@@ -34,7 +34,7 @@ export default class Heartbeat extends React.Component {
             }
             {
               this.props.results.missingVar ?
-              <Animated name={'show'} className={'results'}>
+              <Animated transitionName={'show'} className={'results'} component={'section'}>
                 <MissingVar {...this.props.results.missingVar} />
               </Animated>
               :
@@ -42,7 +42,7 @@ export default class Heartbeat extends React.Component {
             }
             {
               this.props.results.presentVar ?
-              <Animated name={'show'} className={'results'}>
+              <Animated transitionName={'show'} className={'results'} component={'section'}>
                 <PresentVar {...this.props.results.presentVar} />
               </Animated>
               :
@@ -50,7 +50,15 @@ export default class Heartbeat extends React.Component {
             }
             </div>
           </div>
-        <CallSummary testName = {testName}/>
+          {
+            Object.keys(this.props.results).length > 0 ?
+            <Animated transitionName={'show'} className={'summary'} component={'section'}>
+              <CallSummary testName = {testName}/>
+            </Animated>
+            :
+            null
+          }
+
       </div>
     )
   }

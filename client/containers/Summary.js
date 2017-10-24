@@ -3,15 +3,17 @@ import React from 'react'
 import { Link } from 'react-router'
 
 import Informations from '../components/Informations'
-import Select from '../components/Select'
+import Report from '../components/Report'
+import Animated from '../components/Animated'
 
 export default class Summary extends React.Component {
 
   render () {
     return (
       <div className="page">
-        {console.log(this.props)}
-        <p>This is summary page<i className='fa fa-home' aria-hidden='true'></i></p>
+        <Animated transitionName={'show'} className={'summary'} component={'section'}>
+          <Report />
+        </Animated>
       </div>
     )
   }

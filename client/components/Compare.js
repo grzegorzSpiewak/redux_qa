@@ -1,7 +1,7 @@
 import React, { Component} from 'react'
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as actionCreators from '../actions/actionCreators';
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as actionCreators from '../actions/actionCreators'
 
 function mapStateToProps(state) {
   return {
@@ -12,7 +12,7 @@ function mapStateToProps(state) {
 
 class CompareComponent extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
   }
 
   updateDataToCompare (e) {
@@ -46,14 +46,14 @@ class CompareComponent extends React.Component {
           >Compare</button>
         </form>
       </div>
-    );
+    )
   }
 }
 
 function mapDispachToProps(dispatch) {
-  return bindActionCreators(actionCreators, dispatch);
+  return bindActionCreators(actionCreators, dispatch)
 }
 
-const Compare = connect(mapStateToProps, mapDispachToProps)(CompareComponent);
+const Compare = connect(mapStateToProps, mapDispachToProps)(CompareComponent)
 
-export default Compare;
+export default Compare

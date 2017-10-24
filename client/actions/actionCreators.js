@@ -39,13 +39,15 @@ export function failedReason(id, value) {
   }
 }
 
-export function storeResults(name, missingVar, passed, failed) {
+export function storeResults(name, status, missingVar, passed, failed, hasDetails) {
   return {
     type: 'SAVE_TEST_RESULTS',
+    status,
     name,
     missingVar,
     passed,
-    failed
+    failed,
+    hasDetails,
   }
 }
 

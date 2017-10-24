@@ -37,8 +37,8 @@ function compareData(state = [], action) {
         presentVar,
       }
     default:
-      return state;
+      return state
   }
 }
 
-export default compareData;
+export default compareData

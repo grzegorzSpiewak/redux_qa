@@ -1,17 +1,17 @@
 import React, { Component} from 'react'
-import { browserHistory } from 'react-router';
+import { browserHistory } from 'react-router'
 
 class Select extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       redirect: '/heartbeat',
       select: {
         testSuite: '',
       }
     }
-    this.handleSuite = this.handleSuite.bind(this);
-    this.onFormSubmit = this.onFormSubmit.bind(this);
+    this.handleSuite = this.handleSuite.bind(this)
+    this.onFormSubmit = this.onFormSubmit.bind(this)
   }
 
   routerHandler(data) {
@@ -32,7 +32,7 @@ class Select extends React.Component {
     select.testSuite = e.target.value
     this.setState({
       testSuite: select
-    });
+    })
   }
 
   renderOptions(items) {
@@ -55,8 +55,8 @@ class Select extends React.Component {
           </div>
         </form>
       </section>
-    );
+    )
   }
 }
 
-export default Select;
+export default Select

@@ -16,13 +16,19 @@ body {
   background: #0073AD;
 }
 
+div {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 h1 {
   font-weight: 100;
   letter-spacing: 0.1em;
   margin: 0 0 0.5em 0;
   border-bottom: 1px solid #FFFFFF;
   font-size: 1.5em;
-  padding: 0;
+  padding: 0 0 0.3em 0;
   box-shadow: 0 1px 0 0 black;
 }
 

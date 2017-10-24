@@ -16,6 +16,10 @@ const homepage = {
       {name: "6. Click compare"},
       {name: "7. The result for test will be displayed"},
       {name: "8. Validate missing variables and present values"},
+      {name: "9. If valus are incorect mark them as Failed and add a comment why"},
+      {name: "9. Proceed to next test"},
+      {name: "10. When testing is finished click Create Report"}
+
     ]
   },
   select: {
@@ -33,10 +37,10 @@ const homepage = {
       {name: "Heartbeat 2 Video Play Live", value: "Heartbeat2VideoPlayLive", next: "Heartbeat 2 Video Complete Live", id: 11},
       {name: "Heartbeat 2 Video Complete Live", value: "Heartbeat2VideoCompleteLive", next: "Heartbeat 2 Comscore", id: 12},
       {name: "Heartbeat 2 Comscore", value: "Heartbeat2Comscore", next: null , id: 13},
-      {name: "Heartbeat Q3 Video Start", value: "HeartbeatQ3Video Start", next: "Heartbeat Q3 Video Play", id: 14},
-      {name: "Heartbeat Q3 Video Play", value: "HeartbeatQ3Video Play", next: "Heartbeat Q3 Video Pause", id: 15},
-      {name: "Heartbeat Q3 Video Pause", value: "HeartbeatQ3Video Pause", next: "Heartbeat Q3 Video Seek", id: 16},
-      {name: "Heartbeat Q3 Video Seek", value: "HeartbeatQ3Video Seek", next: "Heartbeat Q3 Video Complete", id: 17},
+      {name: "Heartbeat Q3 Video Start", value: "HeartbeatQ3VideoStart", next: "Heartbeat Q3 Video Play", id: 14},
+      {name: "Heartbeat Q3 Video Play", value: "HeartbeatQ3VideoPlay", next: "Heartbeat Q3 Video Pause", id: 15},
+      {name: "Heartbeat Q3 Video Pause", value: "HeartbeatQ3VideoPause", next: "Heartbeat Q3 Video Seek", id: 16},
+      {name: "Heartbeat Q3 Video Seek", value: "HeartbeatQ3VideoSeek", next: "Heartbeat Q3 Video Complete", id: 17},
       {name: "Heartbeat Q3 Video Complete", value: "HeartbeatQ3VideoComplete", next: "Heartbeat Q3 Video Stall", id: 18},
       {name: "Heartbeat Q3 Video Stall", value: "HeartbeatQ3VideoStall", next: "Heartbeat Q3 Ad Start", id: 19},
       {name: "Heartbeat Q3 Ad Start", value: "HeartbeatQ3AdStart", next: "Heartbeat Q3 Ad Play", id: 20},
@@ -49,7 +53,7 @@ const homepage = {
       {name: "Heartbeat Q3 Video Complete Fng", value: "HeartbeatQ3VideoCompleteFng", next: "Heartbeat Q3 Video Start FsGo", id: 27},
       {name: "Heartbeat Q3 Video Start FsGo", value: "HeartbeatQ3VideoStartFsGo", next: "Heartbeat Q3 Video Play FsGo", id: 28},
       {name: "Heartbeat Q3 Video Play FsGo", value: "HeartbeatQ3VideoPlayFsGo", next: "Heartbeat Q3 Video Complete FsGo", id: 29},
-      {name: "Heartbeat Q3 Video Complete FsGo", value: "HeartbeatQ3VideoCompleteFsGo", nest: "Heartbeat Q3 Comscore", id: 30},
+      {name: "Heartbeat Q3 Video Complete FsGo", value: "HeartbeatQ3VideoCompleteFsGo", next: "Heartbeat Q3 Comscore", id: 30},
       {name: "Heartbeat Q3 Comscore", value: "HeartbeatQ3Comscore", next: null, id:31},
     ],
   },

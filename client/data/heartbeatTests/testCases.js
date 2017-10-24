@@ -61,7 +61,7 @@ const testCases = {
   HeartbeatQ3VideoCompleteFng: HbQVideoPlayFng,
   HeartbeatQ3VideoStartFsGo: HbQVideoStartFsGo,
   HeartbeatQ3VideoPlayFsGo: HbQVideoPlayFsGo,
-  HeartbeatQ3VideoCompleteFsGo: HbQVideoPlayFsGo,
+  HeartbeatQ3VideoCompleteFsGo: HbQVideoCompleteFsGo,
   HeartbeatQ3Comscore: Comscore,
 }
 

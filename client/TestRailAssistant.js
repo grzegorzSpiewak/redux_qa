@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 
-import { render } from 'react-dom';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { render } from 'react-dom'
+import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { Provider } from 'react-redux'
 
-import css from './styles/main.css';
+import css from './styles/main.css'
 
 import App from './containers/App'
 /*
@@ -32,4 +32,4 @@ const router = (
   </Provider>
 )
 
-render(router, document.getElementById('root'));
+render(router, document.getElementById('root'))

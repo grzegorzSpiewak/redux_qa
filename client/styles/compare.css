@@ -1,14 +1,20 @@
 .compare__form {
   text-align: center;
+  width: 100%;
 }
 
 .compare__form__textarea {
-  width: 99.5%;
-  min-height: 15em;
-  margin: auto;
-  color: black;
+  padding: 0.3em;
+  min-width: 90%;
+  min-height: 9.3em;
+  color: #0073AD;
+  border-radius: 0.3em;
+  font-size: 0.9em;
+  outline: none;
+  border: 0;
 }
 
 .compare__form__button {
-  margin: auto;
+  margin-top: 0.6em;
+  margin-bottom: 0.3em;
 }

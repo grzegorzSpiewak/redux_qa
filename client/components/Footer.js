@@ -5,7 +5,7 @@ const Footer = (props) => (
   <header className="footer">
     <div className="footer__wrap">
       <div className="footer__brand">
-        Made by Greg
+        <p>Made by Greg</p>
       </div>
     </div>
   </header>

@@ -10,17 +10,34 @@
   cursor: pointer;
 }
 
-.results__list__item__check{
+.results__list__item__returns {
+  max-width: 70%;
+}
+
+.results__list__item__inputs {
+  display: flex;
+  align-items: center;
+}
+
+.results__list__item__check {
   padding: 0.3em;
 }
 
 .results__list__item__check__input {
   margin-left: 0.5em;
+  width: 12px;
+  height: 12px;
+  position: relative;
+  background: #fcfff4;
+  background: -webkit-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+  background: linear-gradient(to bottom, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+  border-radius: 50px;
+  box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .results__list__item__check__textarea {
-  width: 98.5%;
-  color: black;
-  padding: 0.3em;
+  width: 99.74%;
+  color: #0073AD;
   outline: none;
+  padding: 0.3em 0 0.3em 0;
 }

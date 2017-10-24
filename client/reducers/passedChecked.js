@@ -20,4 +20,4 @@ function passedChecked(state = [], action) {
 }
 
 
-export default passedChecked;
+export default passedChecked

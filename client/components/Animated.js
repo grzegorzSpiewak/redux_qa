@@ -7,9 +7,9 @@ export default class Animated extends React.Component {
   render () {
     return (
       <CSSTransitionGroup
-        component="section"
+        component={this.props.component}
         className={this.props.className}
-        transitionName={this.props.name}
+        transitionName={this.props.transitionName}
         transitionAppear={true}
         transitionLeave={true}
         transitionEnterTimeout={500}
